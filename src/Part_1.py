@@ -17,10 +17,10 @@ Assignment Requirement
 ** 대소문자를 정확히 구분해서 작성해 주세요. **
 """
 
-WHERE_YOU_ARE = "현재 작업하고 있는 디렉토리 경로를 확인하는 CLI 명령어를 작성합니다."
+WHERE_YOU_ARE = "pwd"
 
-MAKE_DIRECTORY = "'Section3' 라는 이름을 가진 디렉토리를 생성하는 CLI 명령어를 작성합니다."
+MAKE_DIRECTORY = "mkdir Section3"
 
-CHANGE_DIRECTORY = "현재 경로 안에 생성되어 있는 'Section3' 디렉토리로 이동하는 CLI 명령어를 작성합니다."
+CHANGE_DIRECTORY = "cd ./Section3"
 
-CLONE_REPOSITORY = "Github 에서 포킹한 과제 레포지토리를 로컬로 가지고 오는 CLI 명령어를 작성합니다."
+CLONE_REPOSITORY = "git clone https://github.com/JangJiYeon12/ds-sa-simple-git-flow.git"

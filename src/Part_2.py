@@ -32,8 +32,8 @@ Assignment Requirement
 ** 대소문자를 정확히 구분해서 작성해 주세요. **
 """
 
-MAKE_VIRTUAL_ENV = "python 버전은 3.8, s1n1 이라는 이름을 가진 가상환경을 생성하는 CLI 명령어를 작성합니다."
+MAKE_VIRTUAL_ENV = "conda create --name 's1n1' python=3.8"
 
-ACTIVATE_VIRTUAL_ENV = "s1n1 이라는 이름을 가진 가상환경을 활성화하는 CLI 명령어를 작성합니다."
+ACTIVATE_VIRTUAL_ENV = "conda activate 's1n1'"
 
-VIRTUAL_ENV_LIST = "콘다 가상환경의 목록을 조회하는 CLI 명령어를 작성합니다."
+VIRTUAL_ENV_LIST = "conda env list"

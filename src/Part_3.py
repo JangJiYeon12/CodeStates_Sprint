@@ -21,10 +21,10 @@ Assignment Requirement
 ** 대소문자를 정확히 구분해서 작성해 주세요. **
 """
 
-ADD_TO_STAGING_AREA = "현재 변경 내용을 '모두 한 번에' 스테이징 영역(staging area)에 추가하는 CLI 명령어를 작성합니다."
+ADD_TO_STAGING_AREA = "git add ./"
 
-CHECK_AREA_STATEMENT = "스테이징 영역(staging area)의 상태를 확인하는 CLI 명령어를 작성합니다."
+CHECK_AREA_STATEMENT = "git status"
 
-COMMIT_TO_REPO = "현재 상태를 레포지토리에 기록하는 CLI 명령어를 작성합니다. (여기서 커밋 메세지는 'Part3 commit' 로 작성합니다.)"
+COMMIT_TO_REPO = "git commit -m 'Part3 commit'"
 
-PUSH_TO_REMOTE = "origin 이라는 이름을 가진 원격 Repo 에 로컬의 main 브랜치 상태를 반영하는 CLI 명령어를 작성합니다."
+PUSH_TO_REMOTE = "git push origin main"
