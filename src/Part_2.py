@@ -34,6 +34,6 @@ Assignment Requirement
 
 MAKE_VIRTUAL_ENV = "conda create --name 's1n1' python=3.8"
 
-ACTIVATE_VIRTUAL_ENV = "conda activate 's1n1'"
+ACTIVATE_VIRTUAL_ENV = "conda activate s1n1"
 
 VIRTUAL_ENV_LIST = "conda env list"

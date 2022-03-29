@@ -21,6 +21,6 @@ WHERE_YOU_ARE = "pwd"
 
 MAKE_DIRECTORY = "mkdir Section3"
 
-CHANGE_DIRECTORY = "cd ./Section3"
+CHANGE_DIRECTORY = "cd Section3"
 
 CLONE_REPOSITORY = "git clone https://github.com/JangJiYeon12/ds-sa-simple-git-flow.git"
