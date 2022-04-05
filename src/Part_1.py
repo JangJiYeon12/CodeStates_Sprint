@@ -35,6 +35,10 @@ def get_page(page_url):
         객체입니다).
     """
 
+    page = requests.get(page_url)
+
+    soup = BeautifulSoup(page.content, 'html.parser')
+
 
     return soup, page
 
