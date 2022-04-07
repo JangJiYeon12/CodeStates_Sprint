@@ -64,19 +64,62 @@ MONGODB SETUP
 dont_touch = openweather.copy()
 
 
-HOST = ''
-USER = ''
-PASSWORD = ''
-DATABASE_NAME = ''
+url = 'mongodb+srv://cluster0.jpu3q.mongodb.net/myFirstDatabase?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority'
+
+HOST = 'cluster0.jpu3q.mongodb.net'
+USER = 'Jang-Ji-Yeon'
+PASSWORD = 'wldus1021'
+DATABASE_NAME = 'myFirstDatabase'
 COLLECTION_NAME = 'openweather'
 MONGO_URI = f"mongodb+srv://{USER}:{PASSWORD}@{HOST}/{DATABASE_NAME}?retryWrites=true&w=majority"
 
-"""
-위 코드는 힌트입니다. 자신에 맞는 HOST,USER, PASSWORD, DATABASE_NAME 을 입력하세요
-! COLLECTION_NAME = 'openweather'
-아래 pass 를 지우고 코드를 작성하세요
+client = MongoClient(MONGO_URI)
 
-- 데이터베이스와 연결한 뒤 Collection 이라는 테이블과 연결하는 작업이 가장 오래걸리실 겁니다.
-"""
-
-pass
+database_1 = client[DATABASE_NAME]
+collection_1 = database_1[COLLECTION_NAME]
+collection_1.insert_one(
+  {
+  "coord": {
+    "lon": -122.08,
+    "lat": 37.39
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 282.55,
+    "feels_like": 281.86,
+    "temp_min": 280.37,
+    "temp_max": 284.26,
+    "pressure": 1023,
+    "humidity": 100
+  },
+  "visibility": 16093,
+  "wind": {
+    "speed": 1.5,
+    "deg": 350
+  },
+  "clouds": {
+    "all": 1
+  },
+  "dt": 1560350645,
+  "sys": {
+    "type": 1,
+    "id": 5122,
+    "message": 0.0139,
+    "country": "US",
+    "sunrise": 1560343627,
+    "sunset": 1560396563
+  },
+  "timezone": -25200,
+  "id": 420006353,
+  "name": "Mountain View",
+  "cod": 200
+  }
+  )

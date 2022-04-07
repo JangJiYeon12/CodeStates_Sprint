@@ -32,13 +32,21 @@ MONGODB SETUP
 """
 from pymongo import MongoClient
 
-HOST = ''
-USER = ''
-PASSWORD = ''
-DATABASE_NAME = ''
+HOST = 'cluster0.jpu3q.mongodb.net'
+USER = 'Jang-Ji-Yeon'
+PASSWORD = 'wldus1021'
+DATABASE_NAME = 'myFirstDatabase'
 COLLECTION_NAME = 'octokit_repos'
 MONGO_URI = f"mongodb+srv://{USER}:{PASSWORD}@{HOST}/{DATABASE_NAME}?retryWrites=true&w=majority"
 
+
+client = MongoClient(MONGO_URI)
+database_2 = client[DATABASE_NAME]
+Collection_2 = database_2[COLLECTION_NAME]
+
+
+for docs in dont_touch:
+    Collection_2.insert_one(document=docs)
 """
 위 코드는 힌트입니다. 자신에 맞는 HOST,USER, PASSWORD, DATABASE_NAME 을 입력하세요
 ! COLLECTION_NAME = 'octokit_repos'
@@ -46,5 +54,3 @@ MONGO_URI = f"mongodb+srv://{USER}:{PASSWORD}@{HOST}/{DATABASE_NAME}?retryWrites
 
 - 데이터베이스와 연결한 뒤 Collection 이라는 테이블과 연결하는 작업이 가장 오래걸리실 겁니다.
 """
-
-pass

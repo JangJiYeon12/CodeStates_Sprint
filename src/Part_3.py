@@ -12,19 +12,23 @@ Part_2 에서 입력한 데이터에서 중복되지 않는 repo 의 name 을 �
 """
 from pymongo import MongoClient
 
-HOST = ''
-USER = ''
-PASSWORD = ''
-DATABASE_NAME = ''
+HOST = 'cluster0.jpu3q.mongodb.net'
+USER = 'Jang-Ji-Yeon'
+PASSWORD = 'wldus1021'
+DATABASE_NAME = 'myFirstDatabase'
 COLLECTION_NAME = 'octokit_repos'
 MONGO_URI = f"mongodb+srv://{USER}:{PASSWORD}@{HOST}/{DATABASE_NAME}?retryWrites=true&w=majority"
+
+client = MongoClient(MONGO_URI)
+
+database_3 = client[DATABASE_NAME]
+Collection_3 = database_3[COLLECTION_NAME]
 
 """
 아래 pass 와 주석을 지우고, 코드를 작성하세요
 set 자료형인 names 변수에 octokit의 repo 이름이 저장되도록 작성해주세요
 """
-pass
 
 def Part_3_answer():
-    pass
-    #return names
+    names = []
+
