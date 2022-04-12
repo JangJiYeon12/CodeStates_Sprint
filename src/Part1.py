@@ -1,13 +1,12 @@
 ''' N331 과제 Part1 '''
 
 def n331_part1_1():
-    도커 실행이 안됨
-    return "값을 입력하세요"
+    return "화이팅"
 
 def n331_part1_2():
     ''' part1_2 에 해당하는 이미지를 실행하고
         게임상 오른쪽 3번째 탭에서 시도 횟수를 표현하는 단어를 입력하세요 '''
-    return "값을 입력하세요"
+    return "Lives"
 
 def n331_part1_3():
     ''' 실행한 웹 서버의 /usr/local/apache2 위치에 있는 qeen_track 을 가져오세요
