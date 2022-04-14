@@ -20,19 +20,6 @@ def get_page(page_url):
     """
     get_page 함수는 페이지 URL 을 받아 해당 페이지를 가져오고 파싱한 두
     결과들을 리턴합니다.
-
-    예를 들어 `page_url` 이 `https://github.com` 으로 주어진다면
-        1. 해당 페이지를 requests 라이브러리를 통해서 가져오고 해당 response 객체를 page 변수로 저장
-        2. 1번의 response 의 html 을 BeautifulSoup 으로 파싱한 soup 객체를 soup 변수로 저장
-        3. 저장한 soup, page 들을 리턴하고 함수 종료
-
-    파라미터:
-        - page_url: 받아올 페이지 url 정보입니다.
-
-    리턴:
-        - soup: BeautifulSoup 으로 파싱한 객체
-        - page: requests 을 통해 받은 페이지 (requests 에서 사용하는 response
-        객체입니다).
     """
 
     page = requests.get(page_url)
