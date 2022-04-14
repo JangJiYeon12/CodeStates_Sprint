@@ -14,7 +14,7 @@ def get_city_data(city_name):
 
     리턴:
         - 파이썬 딕셔너리: 조회한 API JSON 데이터를 파이썬 딕셔너리 형태로
-        리턴합니다.
+        리턴합니다.1
     """
 
     current_weather = None
