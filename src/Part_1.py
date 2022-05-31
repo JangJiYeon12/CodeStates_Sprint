@@ -17,5 +17,11 @@ Bare Minimum Requirements
 """
 
 def part1():
-    ##### 소스코드를 작성해주세요 #####
-    pass # 지워주세요
+    list = range(1, 100)
+    answer = []
+
+    for i in list:
+        if i%35==0:
+            answer.append(i)
+    
+    print(answer)
