@@ -1,16 +1,4 @@
-"""
-Bare Minimum Requirements
-
-요구사항:
-    아래 문제들을 확인하며 하나씩 문제를 풀어주세요.    
-"""
-
 class Computer:
-    """
-    ## Computer 클래스의 코드는 수정하지 마세요 ##
-    이미 완성된 코드입니다.
-    아래 코드를 활용하여 문제를 해결해주세요.
-    """
     def __init__(self, cpu, ram):
         self.CPU = cpu
         self.RAM = ram
@@ -23,9 +11,6 @@ class Computer:
         
 
 class Laptop(Computer):
-    """
-    위에 작성된 Computer 클래스를 상속받는 Laptop 클래스를 완성해주세요. 
-    """
     def __init__(self, cpu, ram, battery):
         """
         문제 1.
@@ -37,7 +22,7 @@ class Laptop(Computer):
             (hint)
             괄호가 빠져있지 않은지 확인해보세요~!
         """
-        pass
+        super(cpu, ram)
 
 
 
