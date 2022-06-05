@@ -4,11 +4,6 @@ Advanced Requirements
 내장함수를 다양하게 활용할 줄 알아야 합니다.
 
 요구사항:
-    도전과제에서 주로 바라볼 부분은 예외사항입니다.
-    우리가 실제로 마주할 문제들도 대부분 복합적인 문제이므로 계속해서 스스로 문제를 만들고 해결해보는 과정을 겪어보도록 합니다.
-    문제를 해결하는 방법과 문제에서 요구하는 개념 간의 연관성을 찾아보면서 문제를 해결합니다.
-
-    Part 3의 요구사항은 기본적으로 충족하고, 추가적인 예외사항을 해결해주세요.
     다양한 내장함수를 활용해봅니다.
     소문자는 대문자로, 대문자는 소문자로 변경해주세요.
 
@@ -28,5 +23,19 @@ Advanced Requirements
 """
 
 def part4(s):
-    ##### 소스코드를 작성해주세요 #####
-    pass # 지워주세요
+    ls = set(s.split(' '))
+    ls = sorted(ls)
+
+    result = []
+
+    for i in ls:
+        if i.isupper():
+            result.append(i.lower())
+        else:
+            result.append(i.upper())
+
+    #result = list(map(lambda i : i.lower() if i.isupper() else i.upper(), ls)) #람다로도 만들어봐따
+
+    result = ' '.join(result)
+
+    return result
