@@ -63,5 +63,34 @@ Advanced Requirements
         출력: "1"
 """
 
+import numpy as np
+
 def part3(li):
-    pass
+    li = np.array(li)
+    li_length = len(li)
+
+    if li_length == 2:
+        return li
+    
+    mid = li_length // 2
+
+    left_up = part3(li[:mid,:mid])
+    right_up = part3(li[:mid,mid:])
+    left_down = part3(li[mid:,:mid])
+    right_down = part3(li[mid:,mid:])
+
+    return sort_combine(left_up, right_up, left_down, right_down)
+
+def sort_combine(l_u, r_u, l_d, r_d):
+    if (l_u==0).all() and (r_u==0).all() and (l_d==0).all() and (r_d==0).all():
+        return 0
+    elif (l_u==1).all() and (r_u==1).all() and (l_d==1).all() and (r_d==1).all():
+        return 1
+    else:
+        return f'({l_u}{r_u}{l_d}{r_d})'
+
+
+
+
+
+

@@ -27,31 +27,35 @@ class counter:
 
 
 def merge(left, right):
-    """
-    문제 1. 
-        두 리스트를 받아 합치는 merge함수를 구현해주세요.
-        단 매개변수로 들어오는 리스트는 오름차순으로 정렬된 상태의 리스트이며,
-        반환되는 리스트역시 오름차순으로 정렬된 상태의 리스트여야합니다. 
+    output = []
+    i = j = 0
 
-        ex)
-            l = [4,6,7,10]
-            r = [1,3,9,12]
-            merge(l,r) => [1, 3, 4, 6, 7, 9, 10, 12]
+    while i < len(left) and j < len(right):
+        # 9. 각 반복 동안 두 리스트의 모든 위치에 있는 요소를 비교합니다.
+        if left[i] < right[j]:
+            output.append(left[i])
+            i += 1
+        else:
+            output.append(right[j])
+            j += 1
 
-        파이썬에서 제공되는 sort와 같은 내장함수를 사용하면 안됩니다.
-    """
-    pass
+    # 11. 남아있는 리스트 요소에서 현재 i, j 값을 기준으로 각각 리스트의 마지막지점 인덱스까지 값을 넣고 결과값을 반환합니다.
+    output.extend(left[i:])
+    output.extend(right[j:])
+
+    return output
 
 
 @counter # 삭제하거나 변경하지 마세요!
 def merge_sort(li):
-    """
-    문제 2.
-        문제 1에서 만든 merge 함수를 사용하여 merge_sort를 완성해주세요.
-        정렬되지 않은 리스트를 매개변수로 받아 오름차순으로 정렬된 리스트를 반환하는 
-        merge_sort를 만들어주세요.
+    list_length = len(li)
 
-        작성되어있는 merge_sort함수를 재귀함수로 사용해주세요.
-        merge_sort함수 내부에 새로운 재귀함수로 구현하시면 안됩니다. 
-    """
-    pass
+    if list_length == 1:
+        return li
+
+    mid_point = list_length // 2  # //연산자는 몫을 구한다
+
+    left_partition = merge_sort(li[:mid_point])
+    right_partition = merge_sort(li[mid_point:])
+
+    return merge(left_partition, right_partition)

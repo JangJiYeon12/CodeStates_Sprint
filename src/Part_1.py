@@ -28,11 +28,12 @@ class counter:
 
 @counter    # 삭제하거나 변경하지 마세요!
 def quick_sort(li):
-    """
-    정렬되지 않은 리스트를 매개변수로 받아 오름차순으로 정렬된 리스트를 반환하는 
-    quick_sort를 만들어주세요.
-
-    작성되어있는 quick_sort함수를 재귀함수로 사용해주세요.
-    quick_sort함수 내부에 새로운 재귀함수로 구현하시면 안됩니다. 
-    """
-    pass
+    ARRAY_LENGTH = len(li)
+    
+    if( ARRAY_LENGTH <= 1):
+        return li
+    else:
+        PIVOT = li[0]
+        GREATER = [ element for element in li[1:] if element > PIVOT ]
+        LESSER = [ element for element in li[1:] if element <= PIVOT ]
+        return quick_sort(LESSER) + [PIVOT] + quick_sort(GREATER)
