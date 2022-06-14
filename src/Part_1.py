@@ -9,99 +9,72 @@ Bare Minimum Requirements
     메소드 이름은 변경하지 마세요.
     메소드의 매개변수를 추가하거나 삭제하지 마세요.
 """
+class LinkedListNode:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
 
 class Queue():
     def __init__(self):
-        """
-        # 문제 1.
-        Queue의 생성자 함수를 구현해주세요.
-        구현하시려는 로직에 맞게 해당 함수를 구현해주세요.
-        아래 pass를 지워주시고 코드를 작성해주시면 됩니다. 
-        """
-        pass
-
+        self.front = None
+        self.rear = None
 
     def enqueue(self,item):
-        """
-        #. 문제 2.
-        queue에 item 매개변수에 들어온 값을 집어넣는 메소드를 구현해주세요.
+        new_node = LinkedListNode(item)
+        if self.rear is None:       #큐가 비어있다면,
+            self.front = new_node   #front와 rear 다 new_node를 가르킨다.
+            self.rear = new_node
+        else:
+            self.rear.next = new_node  #rear.next에 새로운 값을 넣고,
+            self.rear = new_node 
 
-        input: item
-            queue로 들어갈 값입니다.
-        output: 
-            반환값은 없습니다.
-        아래 pass를 지워주시고 코드를 작성해주시면 됩니다. 
-        """
-        pass
+        return new_node.data
 
 
     def dequeue(self):
-        """
-        #. 문제 3.
-        queue 동작에 알맞게 값을 queue에서 삭제하는 메소드를 구현해주세요.
+        if self.front is not None:
+            # front값을 old front에 삽입
+            old_front = self.front
+            # old front 다음 값을 front값에 삽입
+            self.front = old_front.next
+            return old_front.data
 
-        input: 
-            input은 없습니다.
-        output: 
-            queue동작에 맞게 queue에서 삭제된 값을 반환해주세요.
-            만약 삭제한 값이 없다면 None을 반환해주세요.
-        아래 pass를 지워주시고 코드를 작성해주시면 됩니다. 
-        """
-        pass
+        else:
+            # rear를 None으로 지정한다.
+            self.rear = None
+            return None
 
 
     def return_queue(self):
-        """
-        #. 문제 4.
-        queue내부에 있는 값을 반환하는 메소드를 구현해주세요.
-
-        input: 
-            input은 없습니다.
-        output: 
-            queue내부에 있는 값을 리스트 형태로 반환해주세요.
-        아래 pass를 지워주시고 코드를 작성해주시면 됩니다. 
-        """
-        pass
+        ls = []
+        node = self.front
+        
+        while node:
+            ls.append(node.data)
+            node = node.next
+        
+        return ls
 
 
 class Stack():
     def __init__(self):
-        """
-        # 문제 5.
-        Stack의 생성자 함수를 구현해주세요.
-        구현하시려는 로직에 맞게 해당 함수를 구현해주세요.
-        아래 pass를 지워주시고 코드를 작성해주시면 됩니다. 
-        """
-        pass
+        self.top = None
 
 
     def push(self, item):
-        """
-        #. 문제 6.
-        Stack에 item 매개변수에 들어온 값을 집어넣는 메소드를 구현해주세요.
-
-        input: item
-            Stack로 들어갈 값입니다.
-        output: 
-            반환값은 없습니다.
-        아래 pass를 지워주시고 코드를 작성해주시면 됩니다. 
-        """
-        pass
+        new_node = LinkedListNode(item)
+        new_node.next = self.top            #새 노드를 현재 최상단 노드에 링크
+        self.top = new_node                 #이제 최상단은 새 노드를 가르키게 함
+        return new_node.data
 
 
     def pop(self):
-        """
-        #. 문제 7.
-        Stack 동작에 알맞게 값을 Stack에서 삭제하는 메소드를 구현해주세요.
-
-        input: 
-            input은 없습니다.
-        output: 
-            Stack동작에 맞게 Stack에서 삭제된 값을 반환해주세요.
-            만약 삭제한 값이 없다면 None을 반환해주세요.
-        아래 pass를 지워주시고 코드를 작성해주시면 됩니다. 
-        """
-        pass
+        if self.top is not None:
+            popped_node = self.top          #삭제할 최상단의 노드를 지정
+            self.top = popped_node.next     #그 노드의 한단계 아래(next)를 탑으로 지정
+            return popped_node.data
+        else:
+            return None
 
 
     def return_stack(self):
@@ -115,6 +88,12 @@ class Stack():
             Stack내부에 있는 값을 리스트 형태로 반환해주세요.
         아래 pass를 지워주시고 코드를 작성해주시면 됩니다. 
         """
-        pass
+        ls = []
+        node = self.top
+        while node:
+            ls.append(node.data)
+            node = node.next
+        
+        return [i for i in reversed(ls)]
 
     

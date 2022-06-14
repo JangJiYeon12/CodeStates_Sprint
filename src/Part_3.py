@@ -13,10 +13,6 @@ Advanced Requirements
 """
 
 class Node:
-    """
-    Deque 클래스에서 사용할 Node 클래스입니다.
-    작성된 코드를 수정하거나 삭제하지 마세요.
-    """
     def __init__(self, value, next=None):
         self.value = value
         self.next = next
@@ -24,10 +20,6 @@ class Node:
 
 class Deque:
     def __init__(self):
-        """
-        아래 코드는 수정하지 마세요.
-        작성된 코드의 의도를 생각해보며 문제를 풀어주세요.
-        """
         self.top = None
         self.bottom = None
 
@@ -43,7 +35,13 @@ class Deque:
             반환값은 없습니다.
         아래 pass를 지워주시고 코드를 작성해주시면 됩니다. 
         """
-        pass
+        if self.top is None:
+            self.top = Node(item)
+        else:
+            node = self.top
+            while node.next:
+                node = node.next
+            node.next = Node(item)
 
 
     def appendleft(self, item):
@@ -57,7 +55,15 @@ class Deque:
             반환값은 없습니다.
         아래 pass를 지워주시고 코드를 작성해주시면 됩니다. 
         """
-        pass
+        new_node = Node(item)
+        if self.top is None:
+            self.top = Node(item)
+        else:
+            node = self.bottom
+            while node.next:
+                node = node.next
+            node.next = Node(item)
+        
 
 
     def pop(self):
