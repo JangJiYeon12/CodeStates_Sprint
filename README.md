@@ -1,5 +1,7 @@
 # Section5
 
+### Sprint와 Section Challenge가 있는 Repojitory입니다
+
 ### Week 1
 <b>note 01 : Python Programming - pythonprogramming  
 <b>note 02 : Problem Solving - problemsolving  
