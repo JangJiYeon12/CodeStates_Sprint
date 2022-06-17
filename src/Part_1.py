@@ -20,11 +20,28 @@ BFS와 DFS에 대해서 파악해봅시다
     출력값:
         [2, 5, 7, 6]
 """
+from collections import deque
 
 def dfs_recur(node, dfs_graph, dfs_list=[]):
-    pass
+    dfs_list.append(node)
+
+    for vert in dfs_graph[node]:
+        if vert not in dfs_list:
+            dfs_recur(vert, dfs_graph, dfs_list)
+
+    return dfs_list
 
 
 def bfs_queue(start_node, bfs_graph):
-    pass
+    list = []
+    queue = deque()
+
+    queue.append(start_node)
+    while queue:
+        node = queue.popleft()
+        if node not in list:
+            list.append(node)
+            queue.extend(bfs_graph[node])
+    
+    return list
 
